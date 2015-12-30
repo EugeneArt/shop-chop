@@ -105,6 +105,71 @@ body{
 			margin-bottom: 10px;
 		}
 	}
+	.header-content__country{
+		margin: 15px 0px;
+		color:  #999999;
+		font-size: 1.6rem;
+		font-weight: 300;
+		img{
+			margin: 0 8px;
+		}
+		.country__name{
+			&:after{
+				content: ',';
+				color:  #999999;
+			}
+		}
+		.country__currency{
+			color:  #555555;
+			cursor: pointer;
+			&:after{
+				content: "\f0dd";
+			    font-family: FontAwesome;
+			    color: #555555;
+			    line-height: 20px;
+			    display: inline-block;
+			    vertical-align: top;
+			}
+		}
+	}
+	.header-content__cart{
+		margin: 35px 0px;
+		ul{
+			padding: 0;
+			list-style: none;
+			font-size: 1.6rem;
+			font-weight: 300;
+			li{
+				display: inline-block;
+				a{
+					text-decoration: none;
+					color:  #999999;
+					&:hover{
+						text-decoration: underline;
+					}
+				}
+			}
+			.account-link{
+				&:after{
+					content: '|';
+					display: inline-block;
+					color:  #999999;
+					margin: 0 5px;
+				}
+			}
+			.saved-items-link{
+				.account-link;
+			}
+			.cart-link{
+				color:  #999999;
+				font-size: 24px;
+				span{
+					color:  #333333;
+				}
+			}
+		}
+		
+	}
 }
 /***************************************
 *Navigation
@@ -465,7 +530,6 @@ body{
 	margin: 50px 0;
 	.row{
 		.topics-item{
-			min-width: @minWidth;
 			margin: 0 auto;
 			text-align: center;
 			font-size: 1.6rem;
