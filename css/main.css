@@ -101,6 +101,7 @@ body {
   margin-bottom: 10px;
 }
 .header-content .header-content__country {
+  position: relative;
   margin: 15px 0px;
   color: #999999;
   font-size: 1.6rem;
@@ -124,6 +125,81 @@ body {
   line-height: 20px;
   display: inline-block;
   vertical-align: top;
+}
+.header-content .header-content__country-description {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  z-index: 2;
+  width: 211px;
+  border: 3px solid #333333;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #6f6f6f;
+  text-align: left;
+  line-height: 35px;
+}
+.header-content .header-content__country-description .country-description__title {
+  height: 37px;
+  padding-left: 10px;
+  background: #333333;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.header-content .header-content__country-description .country-description__title img {
+  margin-bottom: 3px;
+}
+.header-content .header-content__country-description .country-description__title .country__name {
+  padding-left: 5px;
+}
+.header-content .header-content__country-description .country-description__title .country-desription__close {
+  background: url('../img/close.png') no-repeat center;
+  position: absolute;
+  right: 0;
+  background-size: 13px;
+  height: 37px;
+  width: 37px;
+  cursor: pointer;
+}
+.header-content .header-content__country-description .country-description__currency {
+  padding: 0 10px;
+}
+.header-content .header-content__country-description .country-description__currency p {
+  margin: 0;
+}
+.header-content .header-content__country-description .country-description__currency .form-control {
+  color: #555555;
+  font-size: 16px;
+  font-weight: 300;
+  border-radius: 0;
+  border-color: #d7d7d7;
+}
+.header-content .header-content__country-description .country-description__country {
+  padding: 5px 10px 0 10px;
+}
+.header-content .header-content__country-description .country-description__country ul {
+  list-style: none;
+  color: #434343;
+  padding: 0;
+}
+.header-content .header-content__country-description .country-description__country ul li {
+  border-bottom: 1px solid #d7d7d7;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+.header-content .header-content__country-description .country-description__country ul li img {
+  margin: 0;
+}
+.header-content .header-content__country-description .country-description__country ul li span {
+  padding-left: 10px;
+}
+.header-content .header-content__country-description .country-description__country ul li:hover:after {
+  content: ">";
+  color: #434343;
+  font-size: 1.8rem;
+  position: absolute;
+  right: 12px;
 }
 .header-content .header-content__cart {
   margin: 35px 0px;
@@ -453,8 +529,30 @@ body {
   margin: 0 auto;
   text-align: center;
 }
-.products .container .row .products-item img {
+.products .container .row .products-item .products-item__image {
+  position: relative;
   cursor: pointer;
+  overflow: hidden;
+}
+.products .container .row .products-item .products-item__image .products-item__caption {
+  position: absolute;
+  z-index: 2;
+  top: -100%;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 10px;
+  -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 1, 1) 0s;
+  -o-transition: all 0.3s cubic-bezier(0.4, 0, 1, 1) 0s;
+  -ms-transition: all 0.3s cubic-bezier(0.4, 0, 1, 1) 0s;
+  -moz-transition: all 0.3s cubic-bezier(0.4, 0, 1, 1) 0s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 1, 1) 0s;
+}
+.products .container .row .products-item .products-item__image:hover .products-item__caption {
+  top: 0;
 }
 .products .container .row .products-item .products-item__description {
   position: relative;
