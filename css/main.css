@@ -246,22 +246,23 @@ body {
   min-width: 360px;
   min-height: 36px;
 }
-.header-navigation .row {
-  margin: 0;
-}
-.header-navigation .row .navbar-default {
-  background-color: #ffffff;
-}
-.header-navigation .row .navbar-default .wrapper {
+.header-navigation .container {
   border-top: 1px solid #d7d7d7;
   border-bottom: 1px solid #d7d7d7;
 }
-.header-navigation .row .navbar-default .wrapper .navbar-header {
+.header-navigation .container .row {
+  margin: 0;
+}
+.header-navigation .container .row .navbar-default {
+  background-color: #ffffff;
+}
+.header-navigation .container .row .navbar-default .wrapper .navbar-header {
+  width: 335px;
   margin: 0 auto;
   border-right: 1px solid #d7d7d7;
   position: relative;
 }
-.header-navigation .row .navbar-default .wrapper .navbar-header .user {
+.header-navigation .container .row .navbar-default .wrapper .navbar-header .user {
   float: right;
   height: 36px;
   width: 50px;
@@ -273,10 +274,10 @@ body {
   transition: color .5s;
   cursor: pointer;
 }
-.header-navigation .row .navbar-default .wrapper .navbar-header .user:hover {
+.header-navigation .container .row .navbar-default .wrapper .navbar-header .user:hover {
   color: #87CEFA;
 }
-.header-navigation .row .navbar-default .wrapper .navbar-header .cart {
+.header-navigation .container .row .navbar-default .wrapper .navbar-header .cart {
   position: relative;
   float: right;
   height: 36px;
@@ -289,7 +290,7 @@ body {
   transition: color .5s;
   cursor: pointer;
 }
-.header-navigation .row .navbar-default .wrapper .navbar-header .cart .badge {
+.header-navigation .container .row .navbar-default .wrapper .navbar-header .cart .badge {
   position: absolute;
   display: inline-block;
   min-width: 6px;
@@ -305,10 +306,10 @@ body {
   top: -10px;
   right: 1px;
 }
-.header-navigation .row .navbar-default .wrapper .navbar-header .cart:hover {
+.header-navigation .container .row .navbar-default .wrapper .navbar-header .cart:hover {
   color: #87CEFA;
 }
-.header-navigation .row .navbar-default .wrapper .navbar-header .navbar-toggle {
+.header-navigation .container .row .navbar-default .wrapper .navbar-header .navbar-toggle {
   float: left;
   margin: 0;
   background-color: #ffffff;
@@ -318,49 +319,166 @@ body {
   width: 48px;
   height: 36px;
 }
-.header-navigation .row .navbar-default .wrapper .navbar-header .navbar-toggle:active {
+.header-navigation .container .row .navbar-default .wrapper .navbar-header .navbar-toggle:active {
   background-color: #333333;
 }
-.header-navigation .row .navbar-default .wrapper .navbar-header .navbar-toggle .icon-bar {
+.header-navigation .container .row .navbar-default .wrapper .navbar-header .navbar-toggle .icon-bar {
   width: 24px;
   height: 3px;
   margin: 3px auto;
   background-color: #a0a0a0;
 }
-.header-navigation .row .navbar-default .navbar-collapse {
+.header-navigation .container .row .navbar-default .navbar-collapse {
   position: absolute;
   padding: 0;
   z-index: 1;
   border: 0;
   top: 37px;
 }
-.header-navigation .row .navbar-default .navbar-collapse .nav {
+.header-navigation .container .row .navbar-default .navbar-collapse .nav {
   width: 335px;
   margin: 0 auto;
 }
-.header-navigation .row .navbar-default .navbar-collapse .nav li {
+.header-navigation .container .row .navbar-default .navbar-collapse .nav li {
   color: #ffffff;
   font-size: 1.6rem;
-  border: 0;
-}
-.header-navigation .row .navbar-default .navbar-collapse .nav li a {
   border: 2px solid #333333;
+}
+.header-navigation .container .row .navbar-default .navbar-collapse .nav li a {
   color: #ffffff;
 }
-.header-navigation .row .navbar-default .navbar-collapse .nav li a:hover {
+.header-navigation .container .row .navbar-default .navbar-collapse .nav li a:hover {
   background: #87CEFA;
 }
-.header-navigation .row .navbar-default .navbar-collapse .navbar-nav {
+.header-navigation .container .row .navbar-default .navbar-collapse .navbar-nav {
   background-color: #333333;
   border: 2px solid #333333;
 }
-.header-navigation .row .navbar-default .navbar-collapse .navbar-nav li a {
+.header-navigation .container .row .navbar-default .navbar-collapse .navbar-nav .submenu .submenu__item {
   background-color: #787878;
   padding: 15px 20px;
 }
-.header-navigation .row .navbar {
+.header-navigation .container .row .navbar-default .navbar-collapse .navbar-nav .submenu .submenu__item:after {
+  content: "\f0dd";
+  font-family: FontAwesome;
+  color: #333333;
+  font-size: 2rem;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+}
+.header-navigation .container .row .navbar-default .navbar-collapse .navbar-nav .submenu .submenu__open {
+  background-color: #e9e9e9;
+  color: #333333;
+}
+.header-navigation .container .row .navbar-default .navbar-collapse .navbar-nav .submenu .submenu__open:after {
+  content: "\f0de";
+  font-family: FontAwesome;
+  color: #33333;
+  font-size: 2rem;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.header-navigation .container .row .navbar-default .navbar-collapse .navbar-nav .submenu .submenu-list {
+  display: none;
+  list-style: none;
+  padding: 0;
+  background: #ffffff;
+  border-top: 4px solid #333333;
+}
+.header-navigation .container .row .navbar-default .navbar-collapse .navbar-nav .submenu .submenu-list .submenu-list__item {
+  border: none;
+  cursor: pointer;
+}
+.header-navigation .container .row .navbar-default .navbar-collapse .navbar-nav .submenu .submenu-list .submenu-list__item p {
+  margin: 0;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  position: relative;
+  background-color: #787878;
+  padding: 15px 20px;
+  background: #555555;
+}
+.header-navigation .container .row .navbar-default .navbar-collapse .navbar-nav .submenu .submenu-list .submenu-list__item p:after {
+  content: "\f0dd";
+  font-family: FontAwesome;
+  color: #333333;
+  font-size: 2rem;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+}
+.header-navigation .container .row .navbar-default .navbar-collapse .navbar-nav .submenu .submenu-list .submenu-list__item p:after {
+  color: #ffffff;
+}
+.header-navigation .container .row .navbar-default .navbar-collapse .navbar-nav .submenu .submenu-list .search .search__input {
+  width: calc(84%);
+  border: none;
+  border-right: 1px solid #d2d0d0;
+  height: 45px;
+  padding-left: 20px;
+  color: #333333;
+}
+.header-navigation .container .row .navbar-default .navbar-collapse .navbar-nav .submenu .submenu-list .search .search__input:focus {
+  outline: none;
+}
+.header-navigation .container .row .navbar-default .navbar-collapse .navbar-nav .submenu .submenu-list .search .search__button {
+  float: right;
+  background: #ffffff;
+  border: 0;
+  width: 15%;
+  height: 45px;
+  padding: 0;
+  color: #d2d0d0;
+}
+.header-navigation .container .row .navbar-default .navbar-collapse .navbar-nav .submenu .submenu-list .search .search__button:hover {
+  color: #167c9a;
+}
+.header-navigation .container .row .navbar-default .navbar-collapse .navbar-nav .submenu .submenu-list .search .search__button:focus {
+  outline: none;
+}
+.header-navigation .container .row .navbar {
   min-height: 36px;
   margin: 0;
+}
+@media (min-width: 768px) {
+  .header-navigation {
+    border-top: 1px solid #d7d7d7;
+  }
+  .header-navigation .row .navbar-default {
+    background-color: red;
+  }
+  .header-navigation .row .navbar-default .wrapper {
+    border: none;
+  }
+  .header-navigation .row .navbar-default .wrapper .navbar-header {
+    width: 100%;
+    border: none;
+  }
+  .header-navigation .row .navbar-default .wrapper .navbar-collapse {
+    position: static;
+  }
+  .header-navigation .row .navbar-default .wrapper .navbar-collapse .nav {
+    width: 100%;
+    border: 0;
+    background: inherit;
+  }
+  .header-navigation .row .navbar-default .wrapper .navbar-collapse .nav li {
+    font-size: 1.8rem;
+    font-weight: 300;
+  }
+  .header-navigation .row .navbar-default .wrapper .navbar-collapse .nav li a {
+    background: inherit;
+    transition: color .5s, background .5s;
+    border: none;
+    color: #434343;
+    line-height: 36px;
+    padding: 0 20px;
+  }
+  .header-navigation .row .navbar-default .wrapper .navbar-collapse .nav li a:hover {
+    background-color: #167c9a;
+  }
 }
 /************************************
 *Slider
