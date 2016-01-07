@@ -6,10 +6,10 @@ $( document ).ready(function() {
     });
     //submenu-toggle
     $(".submenu-list__item").click(function(){
-        $(this).find(".list-inside").slideToggle("slow")
+        $(this).find(".list-inside").slideToggle("slow");
         $(this).find(".list-item").toggleClass("list-item__open");
     });
     $(".navbar-toggle").click(function(){
-        $(this).toggleClass("navbar-toggle__open")
+        $(this).toggleClass("navbar-toggle__open");
     })
 });
