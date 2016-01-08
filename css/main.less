@@ -534,6 +534,10 @@ body{
 												background-color: #167c9a;
 											}
 										}
+										.submenu__open{
+											background: #333333;
+											color: #ffffff;
+										}
 										.submenu-list{
 											display: none;
 											list-style: none;
@@ -541,58 +545,100 @@ body{
     										z-index: 3;
     										padding: 0;
     										background-color:  #f6f6f6;
+    										outline: 2px solid #333333;
+    										outline-offset: -2px;
 											.submenu-list__item{
 												float: left;
+												border-right: 1px solid #d7d7d7;
 												.list-item{
 													background-color:  #e9e9e9;
+													padding: 18px;
+													margin: 0;
+    												text-transform: uppercase;
+    												border-bottom: 1px solid #d7d7d7;
+    												cursor: pointer;
 												}
 												.list-inside{
+													display: inline-block;
+													vertical-align: top;
 													list-style: none;
-													padding: 0;
+													padding: 10px 0;
 													.list-inside__item{
+														padding: 7px 15px;
+														font-family: Aleo;
+														
+														font-size: 14px;
+														font-weight: 400;
+														a{
+															text-decoration: none;
+															color:  #434343;
+															transition: background .5s, color .5s;
+															padding: 5px;
+															cursor: pointer;
+															&:hover{
+																background-color:  #333333;
+																color:  #ffffff;
+															}
+														}
 													}
-												}
-												.search{
-													position: absolute;
-													z-index: 2;
-													right: 0;
-													margin-right: 10%;
-													.search__input{
-													    border: none;
-													    border-left: 1px solid #d2d0d0;
-													    height: 36px;
-													    padding-left: 20px;
-													    margin-right: 20px;
-													    &:focus{
-				    										outline: none;
-				    									}
+													.list-inside__item._active{
+														margin: 5px;
+														a{
+															padding: 5px;
+															background: #62214e;
+															color:  #ffffff;
+															font-weight: 700;
+															&:hover{
+																background-color:  #333333;
+																color:  #ffffff;
+															}
+														}
 													}
-													.search__button{
-														background: #ffffff;
-				    									border: 0;
-				    									padding: 0;
-				    									padding: 5px 10px;
-   														border-left: 1px solid #d2d0d0;
-   														border-right: 1px solid #d2d0d0;
-				    									color: #d2d0d0;
-				    									&:hover{
-				    										color: #167c9a;
-				    									}
-				    									&:focus{
-				    										outline: none;
-				    									}
+													.list-inside__item._other{
+														margin-top: 8px;
+														a{
+															font-weight: 700;
+														}
 													}
 												}
 											}
 										}
-										.submenu-list._search{
-											display: block;
-										}
 									}
 									.submenu._search{
-										position: static;
+										position: relative;
+										float: right;
 										.submenu__item{
 											display: none;										
+										}
+										.submenu-list._search{
+											display: block;
+											position: static;
+											.search{
+												.search__input{
+													border: none;
+													border-left: 1px solid #d2d0d0;
+													height: 36px;
+													padding-left: 20px;
+													margin-right: 20px;
+													&:focus{
+				    									outline: none;
+				    								}
+												}
+												.search__button{
+													background: #ffffff;
+				    								border: 0;
+				    								padding: 0;
+				    								padding: 5px 10px;
+   													border-left: 1px solid #d2d0d0;
+				    								color: #d2d0d0;
+				    								&:hover{
+				    									color: #167c9a;
+				    								}
+				    								&:focus{
+				    									outline: none;
+				    								}
+												}
+											}
 										}
 									}
 								}
