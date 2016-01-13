@@ -16,15 +16,19 @@ $( document ).ready(function() {
     // SLIDER
         var contentwidth = $(".contentslider").width();
         $(".contentslider").css({'width' : "100%"});
-        // $(".slider-wrapper").removeClass("bgactive")
-        // $(".slider-wrapper").addClass("bgactive")
         rotate = function(){
             var slideid = $active.attr("rel") - 1;
-            var slidedistance = slideid * contentwidth;
             $(".contentnav a").removeClass("active");
             $active.addClass('active');
+            if (slideid == 1){
+                 slidedistance = "-100%";
+                console.log(slidedistance);
+            } else{
+                 slidedistance = "0%";
+                 console.log(slidedistance);
+            }
             $(".contentslider").animate({
-                    left: -slidedistance
+                    left: slidedistance
                 }, 500 );
                 
             if (slideid == 0){

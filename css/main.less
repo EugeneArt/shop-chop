@@ -256,7 +256,6 @@ body{
 		min-height: 36px;
 		.container{
 			border-top: 1px solid @borderNav; 
-			border-bottom: 1px solid @borderNav;
 			.row{
 				margin: 0;
 				.navbar-default{
@@ -403,7 +402,7 @@ body{
 												&:after{
 													content: "\f0de";
 													font-family: FontAwesome;
-												    color: #33333;
+												    color: #333333;
 												    font-size: 2rem;
 													position: absolute;
 													right: 20px;
@@ -755,10 +754,11 @@ body{
 	transition: all 0.5s ease;
 	background: #030302;
 	position:relative;
+	border: 1px solid #030302;
 	.slider{
-	width: 360px;
-	margin: 0 auto;
-	height: 290px;
+		width: 360px;
+		margin: 0 auto;
+		height: 290px;
 		position:relative;
 		overflow: hidden;
 		.contentslider{
@@ -771,13 +771,12 @@ body{
 				position: relative;
 				display: inline-block;
 				width: 100%;	
-				img{
+				height: 100%;
+				.content__image{
 					width: 100%;
 				}			
 				.content__title{
 					position: absolute;
-					display: inline-block;
-    				z-index: 1;
 					font-family: Aleo;
 					font-size: 3.6rem;
 					color:  #ffffff;
@@ -787,9 +786,11 @@ body{
 					left: 0;
 					margin: 0 55px;
 				}
+				.content__description{
+					display: none;
+				}
 				.content__title.inverse{
 					color: #030200;
-					ont-weight: 600;
 				}
 				.content__btn{
 					text-decoration: none;
@@ -854,6 +855,47 @@ body{
 }
 .bgactive{
 	background: #f6f6f6;
+	border: 1px solid #d2d0d0;
+}
+/************************************
+*Slider Tablet
+************************************/
+@media (min-width: 768px){
+	.slider-wrapper{
+		.slider{
+			height: 400px;
+			width: 100%;
+			.contentslider{
+				.content{
+					.content__image{
+						width: 55%;
+						position: absolute;
+						bottom: 0;
+					}
+					.content__title{
+						text-align: left;
+						left: 50%;
+					}
+					.content__description{
+						display: inline-block;
+						overflow: hidden;
+						width: 300px;
+						word-wrap: break-word;
+						position: absolute;
+						top: 30%;
+						font-family: Aleo;
+						color:  #727272;
+						font-size: 1.8rem;
+						font-weight: 300;
+						text-align: left;
+					}
+					.content__btn{
+						left: 60%;
+					}
+				}
+			}
+		}
+	}
 }
 /***********************************
 *CATALOG
