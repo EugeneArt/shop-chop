@@ -11,8 +11,8 @@ $( document ).ready(function() {
     });
     $(".navbar-toggle").click(function(){
         $(this).toggleClass("navbar-toggle__open");
-    })
-    
+    });
+
     // SLIDER
         var contentwidth = $(".contentslider").width();
         $(".contentslider").css({'width' : "100%"});
@@ -22,10 +22,8 @@ $( document ).ready(function() {
             $active.addClass('active');
             if (slideid == 1){
                  slidedistance = "-100%";
-                console.log(slidedistance);
             } else{
                  slidedistance = "0%";
-                 console.log(slidedistance);
             }
             $(".contentslider").animate({
                     left: slidedistance
@@ -60,5 +58,42 @@ $( document ).ready(function() {
             rotation();
             return false;
         });
-        // });
+
+        //money-select
+        $(".country__currency").click(function(){
+            $(".header-content__country-description").toggle();
+            $(".country-desription__close").click(function(){
+                $(".header-content__country-description").hide();
+            });
+        });
+        $(document).on('click', function(e){
+            if(!$(e.target).closest(".header-content__logo").length){
+                $(".header-content__country-description").hide();
+            }
+            e.stopPropagation();
+        });
+
+        $(".search__button").click(function(){
+            $(".search__input").toggle();
+        });
+        
+        //radius dimension
+        $(".radius-plus").click(function(){
+            $(".radius-dimension").text(function(index,text){
+                var plus = parseInt(text.replace(/\D+/g,""));
+                plus += 1;
+                 return plus + " Miles";
+            });
+        });
+        $(".radius-minus").click(function(){
+            $(".radius-dimension").text(function(index,text){
+                var plus = parseInt(text.replace(/\D+/g,""));
+                plus -= 1;
+                 return plus + " Miles";
+            });
+        });
+
+        // var currency = $(".form-control._select").val();
+        // $(".country__currency").text(currency);
+
 });
