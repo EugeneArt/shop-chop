@@ -137,7 +137,7 @@ body{
 		display: none;
 		position: absolute;
 		background-color:  #f6f6f6;
-		z-index: 2;
+		z-index: 4;
 		width: 211px;
 		border: 3px solid #333333;
 		font-size: 1.6rem;
@@ -166,6 +166,9 @@ body{
 				height: 37px;
     			width: 37px;
     			cursor: pointer;
+    			&:hover{
+    				background-color: #222222;
+    			}
 			}
 		}
 		.country-description__currency{
@@ -246,6 +249,9 @@ body{
 		}
 		
 	}
+}
+.question,.livechat{
+	display: none;
 }
 /***************************************
 *Navigation mobile
@@ -684,6 +690,124 @@ body{
 			display: inline-block;
 		}
 	}
+/****************************************************
+*QUESTION
+*********************************************************/
+	.question{
+		display: block;
+		position: fixed;
+		z-index: 10;
+		top: 85%;
+		right: 0;
+		width: 54px;
+		height: 54px;
+		background: #232323 url('../img/question.png') no-repeat center;
+		cursor: pointer;
+		.question-arrow{
+			display: none;
+			position: fixed;
+			width: 54px;
+			height: 54px;
+			background: #232323;
+			top: 65%;
+			&::before{
+				font-family: FontAwesome;
+				font-size: 4rem;
+				color: #ffffff;
+				content: '\f106';
+				position: absolute;
+				top: 10%;
+				left: 30%;
+			}
+			.question-arrow__assistant{
+				display: inline-block;
+				background-color:  #333333;
+				position: fixed;
+				right: 54px;
+				height: 54px;
+				padding: 15px;
+				font-family: @fontBasic;
+				color:  #ffffff;
+				font-size: 1.8rem;
+				font-weight: 400;
+			}
+		}
+	}
+	.livechat{
+		display: none;
+		position: fixed;
+		border: 2px solid #333333;
+		top: 30%;
+		right: 35%;
+		z-index: 10;
+		width: 440px;
+		.livechat__header{
+			width: 100%;
+			height: 54px;
+			color:  #ffffff;
+			font-size: 1.8rem;
+			font-weight: 400;
+			background-color:  #333333; 
+			padding: 15px;
+			.livechat__header--close{
+				background: url('../img/close.png') no-repeat center;
+				position: absolute;
+				right: 0;
+				top: 0;
+				background-size: 20px;
+				height: 54px;
+    			width: 54px;
+    			cursor: pointer;
+    			&:hover{
+    				background-color: #232323;
+    			}
+			}
+		}
+		.livechat__content{
+			background-color:  #f6f6f6;
+			p{
+				margin: 0;
+				padding: 10px 25px;
+				button{
+					margin-bottom: 20px;
+				}
+			}
+			.livechat__content--title{
+				font-family: Aleo;
+				color:  #333333;
+				font-size: 3rem;
+				font-weight: 400;
+				
+			}
+			.livechat__content--desription{
+				font-family: @fontBasic;
+				color:  #6f6f6f;
+				font-size: 1.6rem;
+				font-weight: 300;
+			}
+			.livechat__content-input{
+				width: 75%;
+				height: 34px;
+				font-size: 1.6rem;
+				font-weight: 300;
+				color:  #cccccc;
+				padding: 10px;
+				border: 1px solid #d7d7d7
+			}
+			.livechat__content--btn{
+				padding: 10px 25px;
+				transition: background 0.5s, color 0.5s ease;
+			    background: #167c9a;
+			    border: 1px solid #167c9a;
+			    color:  #ffffff;
+				font-size: 1.6rem;
+				&:hover{
+					background: #ffffff;
+					color: #167c9a;
+				}
+			}
+		}
+	}
 }
 /************************************
 *Slider
@@ -847,6 +971,7 @@ body{
 @media (min-width: 992px){
 	.slider-wrapper{
 		.slider{
+			height: 420px;
 			.contentslider{
 				.content{
 					.content__image{
@@ -1128,24 +1253,27 @@ body{
 	background-color:  #f6f6f6;
 	padding: 40px;
 	min-width: @minWidth;
-	.row{
-		text-align: center;
-		.twitter__name{
-			color:  #434343;
-			font-size: 2.4rem;
-			font-weight: 400;
-			line-height: 3.6rem;
-			span{
-				color:  #999999;
+	.container{
+		width: 100%;
+		.row{
+			text-align: center;
+			.twitter__name{
+				color:  #434343;
+				font-size: 2.4rem;
+				font-weight: 400;
+				line-height: 3.6rem;
+				span{
+					color:  #999999;
+				}
 			}
-		}
-		.twitter__description{
-			color:  #999999;
-			font-size: 1.6rem;
-			font-weight: 300;
+			.twitter__description{
+				color:  #999999;
+				font-size: 1.6rem;
+				font-weight: 300;
 
-			span{
-				color:  #3f8bd5;
+				span{
+					color:  #3f8bd5;
+				}
 			}
 		}
 	}

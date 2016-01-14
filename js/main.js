@@ -72,7 +72,7 @@ $( document ).ready(function() {
             }
             e.stopPropagation();
         });
-
+        //search
         $(".search__button").click(function(){
             $(".search__input").toggle();
         });
@@ -95,5 +95,14 @@ $( document ).ready(function() {
 
         // var currency = $(".form-control._select").val();
         // $(".country__currency").text(currency);
-
+        //question
+        $(".question").click(function(){
+            $(".question-arrow").toggle("slow");
+        });
+        $(".question-arrow").click(function(){
+            $(".livechat").show("slow");
+            $(".livechat__header--close").click(function(){
+                $(".livechat").hide();
+            });
+        })
 });
