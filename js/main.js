@@ -104,5 +104,6 @@ $( document ).ready(function() {
             $(".livechat__header--close").click(function(){
                 $(".livechat").hide();
             });
-        })
+        });
+        $(".livechat").draggable();
 });
