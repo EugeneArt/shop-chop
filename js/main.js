@@ -92,9 +92,31 @@ $( document ).ready(function() {
                  return plus + " Miles";
             });
         });
+        //qurency
+        $(".form-control._select").click(function(){
+            var currency = $(this).val();
+            $(".country__currency").text(currency);
+        });
+        //country curency
+        $(".country-item").click(function(){
+            var text = $(this).find("span").text();
+            var src_img = $(this).find("img").attr("src");
+            var alt_img = $(this).find("img").attr("alt");
 
-        // var currency = $(".form-control._select").val();
-        // $(".country__currency").text(currency);
+            var text_active = $(".country__name").html();
+            var src_img_active = $(".country__img").attr("src");
+            var alt_img_active = $(".country__img").attr("alt");
+
+            $(this).find("span").text(text_active);
+            $(this).find("img").attr({"src": src_img_active, "alt": alt_img_active});
+            $(".country-list").append($(this).hide().show("slow"));
+
+            $(".country__name").text(text);
+            $(".country__img").attr({"src": src_img, "alt": alt_img});
+            $(".header-content__country>img").attr({"src": src_img, "alt": alt_img});
+
+        });
+
         //question
         $(".question").click(function(){
             $(".question-arrow").toggle("slow");
