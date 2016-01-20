@@ -1,13 +1,13 @@
 $( document ).ready(function() {
     // menu-toggle
-    $(".submenu").find(".submenu__item").click(function () {
+    $(".submenu__item").click(function () {
         $(this).next(".submenu-list").slideToggle("slow");
         $(this).toggleClass("submenu__open");
     });
     //submenu-toggle
-    $(".submenu-list__item").click(function(){
-        $(this).find(".list-inside").slideToggle("slow");
-        $(this).find(".list-item").toggleClass("list-item__open");
+    $(".list-item").click(function(){
+        $(this).next(".list-inside").slideToggle("slow");
+        $(this).toggleClass("list-item__open");
     });
     $(".navbar-toggle").click(function(){
         $(this).toggleClass("navbar-toggle__open");
@@ -66,6 +66,7 @@ $( document ).ready(function() {
                 $(".header-content__country-description").hide();
             });
         });
+        //hide
         $(document).on('click', function(e){
             if(!$(e.target).closest(".header-content__logo").length){
                 $(".header-content__country-description").hide();
@@ -74,7 +75,7 @@ $( document ).ready(function() {
         });
         //search
         $(".search__button").click(function(){
-            $(".search__input").toggle();
+            $(".search__input").show();
         });
         
         //radius dimension
@@ -128,4 +129,61 @@ $( document ).ready(function() {
             });
         });
         $(".livechat").draggable();
+
+        //validate
+        $(function(){
+            $(".rf").each(function(){
+                var form = $(this);
+                var btn = form.find(".btn_submit");
+
+                form.find(".rfield").addClass("empty_field");
+
+                function checkInput(){
+                    form.find(".rfield").each(function(){
+                        if ($(this).val() != ''){
+                            $(this).removeClass("empty_field");
+                        } else {
+                            $(this).addClass("empty_field");
+                        }
+                    });
+                }
+
+                function lightEmpty(){
+                    form.find(".empty_field").css({"border-color": "#d8512d"});
+                    $(".validate_form._please").show();
+                    setTimeout(function(){
+                        form.find(".empty_field").removeAttr("style");
+                        $(".validate_form._please").hide();
+                    }, 2000);
+                }
+
+                setInterval( function(){
+                    checkInput();
+                    var sizeEmpty = form.find(".empty_field").size();
+                    if (sizeEmpty > 0) {
+                        if (btn.hasClass("dis")){
+                            return false;
+                        } else{
+                            btn.addClass("dis")
+                        }
+                    } else {
+                        btn.removeClass("dis");
+                    }
+                }, 1000);
+
+                btn.click(function(){
+                    if ($(this).hasClass("dis")){
+                        lightEmpty();
+                        return false;
+                    } else {
+                            $(".validate_form._thanks").show();
+                        setTimeout(function(){
+                            $(".validate_form._thanks").hide();
+                            form.submit();
+                        }, 1000);
+                        
+                    }
+                });
+            });
+        });
 });
